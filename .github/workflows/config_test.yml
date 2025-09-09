@@ -39,5 +39,5 @@ jobs:
       - name: Run_tb
         run: |
           echo Running test
-          verilator ./${{ github.workspace }}/design.v ./${{ github.workspace }}/tb.sv --binary --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD
+          verilator design.v tb.sv --binary --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD
           time ./obj_dir/Vxtea

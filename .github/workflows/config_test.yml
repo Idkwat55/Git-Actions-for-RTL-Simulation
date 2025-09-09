@@ -40,4 +40,4 @@ jobs:
         run: |
           echo Running test
           verilator design.v tb.sv --binary --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD
-          time ./obj_dir/Vxtea
+          ./obj_dir/Vxtea

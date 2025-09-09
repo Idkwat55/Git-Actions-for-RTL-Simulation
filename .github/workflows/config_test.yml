@@ -39,8 +39,7 @@ jobs:
       - name: Run_tb
         run: |
           echo Running test
-          verilator --binary ./design.v ./tb.sv --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD
+          verilator --binary --top-module tb ./design.v ./tb.sv --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD
           ls ./obj_dir | grep V
           ./obj_dir/Vtb
-          ./obj_dir/Vxtea
           

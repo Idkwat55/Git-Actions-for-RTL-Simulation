@@ -17,6 +17,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-24.04
+    container:
+      image: idkwat55/gitactions_wconfig:latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -37,5 +39,5 @@ jobs:
       - name: Run_tb
         run: |
           echo Running test
-          verilator ./${{ github.workspace }}/design.v ./${{ github.workspace }}/tb.sv --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD
- 
+          verilator ./${{ github.workspace }}/design.v ./${{ github.workspace }}/tb.sv --binary --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD
+          time ./obj_dir/Vxtea

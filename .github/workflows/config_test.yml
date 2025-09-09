@@ -39,5 +39,5 @@ jobs:
       - name: Run_tb
         run: |
           echo Running test
-          verilator --binary ./xtea.v ./xtea_tb_v.v --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD
+          verilator --binary ./design.v ./tb.v --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD
           ./obj_dir/Vxtea

@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module xtea_tb_v;
+module tb;
 
   reg          clk;
   reg          rst_i;

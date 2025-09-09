@@ -27,7 +27,7 @@ jobs:
       - name: Install_apt_tools
         run: |
           echo Installing apt tools
-          apt update && apt install python3 python3-pip verilator -y --no-install-recommends
+          sudo apt-get install python3 python3-pip verilator -y --no-install-recommends
 
       - name: Install_pip_tools
         run: |

@@ -17,6 +17,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-24.04
+    container:
+      image: idkwat55/gitactions_wconfig:latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -24,18 +26,18 @@ jobs:
       - uses: actions/checkout@v5
 
       # Runs a single command using the runners shell
-      - name: Install_apt_tools
-        run: |
-          echo Installing apt tools
-          apt update && apt install python3 python3-pip verilator -y --no-install-recommends
+      #- name: Install_apt_tools
+       # run: |
+        #  echo Installing apt tools
+         # sudo apt-get install python3 python3-pip verilator -y --no-install-recommends
 
-      - name: Install_pip_tools
-        run: |
-          echo Installing pip tools
-          pip install cocotb cocotb_bus
+      #- name: Install_pip_tools
+      #  run: |
+       #   echo Installing pip tools
+        #  pip install cocotb cocotb_bus
       # Runs a set of commands using the runners shell
       - name: Run_tb
         run: |
           echo Running test
-          verilator ./${{ github.workspace }}/design.v ./${{ github.workspace }}/tb.sv --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD
- 
+          verilator design.v tb.sv --binary --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD
+          time ./obj_dir/Vxtea

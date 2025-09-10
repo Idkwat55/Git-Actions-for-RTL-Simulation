@@ -47,7 +47,7 @@ jobs:
       - name: Run_tb
         run: |
           echo Running test
-          verilator --binary --timing --threads 2 -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD -top-module tb tb.sv design.v
+          verilator --binary --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD -Wno-WIDTHTRUNC -Wno-WIDTH -top-module tb -f filelist.txt
           ./obj_dir/Vtb
           
           

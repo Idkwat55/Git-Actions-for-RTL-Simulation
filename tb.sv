@@ -175,7 +175,6 @@ module tb;
       reset_dut;
       fixed_data = 64'hDEADBEEFCAFEBABE;  // example input data
 
-      // TODO: you populate key_cases[...] with your 30 values
 
 
       key_cases[0] = 128'h00000000000000000000000000000000;  // All 0s
@@ -237,8 +236,8 @@ module tb;
   // ----------------------------
   initial begin
 
+    $dumpfile("dump.fst");
     $dumpvars;
-    $dumpfile("xtea_tb_v.fst");
 
     $display("Starting xtea_tb_v tests:");
     $display("Running  xtea_tb_v test: random_data_test");

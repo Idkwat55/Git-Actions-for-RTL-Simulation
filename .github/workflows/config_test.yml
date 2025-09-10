@@ -51,7 +51,7 @@ jobs:
           ./obj_dir/Vtb
           
       - name: Extract and Update waveforms
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lastest_waveform
           path: dump.fst

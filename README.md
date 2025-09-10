@@ -17,3 +17,9 @@ filelist.txt # List of Verilog/SystemVerilog files to compile and simulate
 1. Ensure your top-level testbench module is named `tb`.
 2. The workflow will generate waveform files named `dump.fst`.
 3. Download the waveform artifacts directly from the GitHub Actions run page.
+
+## How to Use
+1. Clone this repository to your local machine.
+2. Copy / write your designs or testbench files. Update the `filelist.txt` accordingly. 
+3. After ensuring you are logged into GitHub client (terminal or gui), create a new branch.
+4. Commit your changes in this branch and push the branch to GitHub.

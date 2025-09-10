@@ -18,7 +18,8 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-24.04
     container:
-      image: idkwat55/icarus_slim:latest
+      image: verilator/verilator:v5.040
+      # idkwat55/icarus_slim:latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -40,10 +41,12 @@ jobs:
       #verilator --cc --exe --build -j --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD -top-module tb tb.sv design.v
       # ls ./obj_dir | grep V
       #  ./obj_dir/Vxtea
-          
+      #    iverilog -o exec.vvp design.v tb.sv  -g2005-sv
+       #   vvp exec.vvp
+      
       - name: Run_tb
         run: |
           echo Running test
-          iverilog -o exec.vvp design.v tb.sv  -g2005-sv
-          vvp exec.vvp
+          --cc --exe --build -j --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD -top-module tb tb.sv design.v
+          
           

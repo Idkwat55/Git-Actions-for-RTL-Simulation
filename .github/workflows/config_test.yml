@@ -47,7 +47,7 @@ jobs:
       - name: Run_tb
         run: |
           echo Running test
-          verilator --cc --exe --build -j --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD -top-module tb tb.sv design.v
-          ./obj_dir/xtea
+          verilator --binary --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD -top-module tb tb.sv design.v
+          ./obj_dir/Vtb
           
           

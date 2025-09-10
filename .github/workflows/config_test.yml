@@ -47,7 +47,13 @@ jobs:
       - name: Run_tb
         run: |
           echo Running test
-          verilator --binary --timing -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD -Wno-WIDTHTRUNC -Wno-WIDTH -top-module tb -f filelist.txt
+          verilator --binary --timing  --trace --trace-fst -Wno-INITIALDLY -Wno-WIDTHEXPAND -Wno-TIMESCALEMOD -Wno-WIDTHTRUNC -Wno-WIDTH -top-module tb -f filelist.txt
           ./obj_dir/Vtb
+          
+      - name: Extract and Update waveforms
+        uses: actions/upload-artifact@v3
+        with:
+          name: lastest_waveform
+          path: dump.fst
           
           
